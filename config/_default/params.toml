@@ -19,7 +19,7 @@ subtitle = "TTU Computer Science Student"
 [sidebar.avatar]
 enabled = true
 local = true
-src = "img/avatar.png"
+src = "img/stanley.jpg"
 
 [article]
 math = false
@@ -75,7 +75,7 @@ enabled = true
 
 ## Comments
 [comments]
-enabled = true
+enabled = false
 provider = "giscus"
 
 [comments.disqusjs]
