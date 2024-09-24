@@ -1,6 +1,6 @@
 ---
-title: Example Category
-description: A description of this category
+title: Hacking
+description: Learning to be a hacker
 image:
 
 # Badge style
