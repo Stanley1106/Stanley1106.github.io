@@ -1,7 +1,7 @@
 ---
 title: OverTheWire 解題紀錄
 description: 手把手解 OverTheWire
-slug: hello-world
+slug: overthewire
 date: 2024-09-24 00:00:00+0000
 image: over-the-wire.png
 categories:
@@ -9,6 +9,7 @@ categories:
 tags:
     - Hacking
     - Linux
+    - Note
 weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
 
@@ -202,12 +203,4 @@ The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
 
 :::spoiler Flag
 JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
-:::
-
-### Level12 -> Level13
-
-
-
-:::spoiler Flag
-
 :::
