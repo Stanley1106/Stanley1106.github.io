@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note on Stanley Pages</title><link>https://stanley1106.github.io/tags/note/</link><description>Recent content in Note on Stanley Pages</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 26 Sep 2024 11:43:26 +0800</lastBuildDate><atom:link href="https://stanley1106.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>OverTheWire 解題紀錄</title><link>https://stanley1106.github.io/p/overthewire/</link><pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate><guid>https://stanley1106.github.io/p/overthewire/</guid><description>&lt;img src="https://stanley1106.github.io/p/overthewire/over-the-wire.png" alt="Featured image of post OverTheWire 解題紀錄" />&lt;h1 id="overthewire-解題紀錄">OverTheWire 解題紀錄
+&lt;/h1>&lt;h2 id="bandit">Bandit
+&lt;/h2>&lt;h2 id="網址">網址
+&lt;/h2>&lt;p>&lt;a class="link" href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener"
+>https://overthewire.org/wargames/bandit/&lt;/a>&lt;/p>
+&lt;h3 id="level0">Level0
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ssh bandit0@bandit.labs.overthewire.org -p &lt;span class="m">2220&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>使用此指令連線到此伺服器，輸入密碼 &lt;code>bandit0&lt;/code> 即可連線。&lt;/p>
+&lt;hr>
+&lt;h3 id="level0---level1">Level0 -&amp;gt; Level1
+&lt;/h3>&lt;p>先用 &lt;code>ls&lt;/code> 查看底下的檔案，可以看到 readme 檔，用 &lt;code>cat&lt;/code> 指令讀取檔案內容。
+看到密碼後，就可以 &lt;code>ctrl + D&lt;/code> 退出伺服器。
+:::spoiler Flag
+NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level1---level2">Level1 -&amp;gt; Level2
+&lt;/h3>&lt;p>這一題要我們處理非字元符號，剛開始先 &lt;code>ls&lt;/code> 可以看到檔名為 &lt;code>-&lt;/code> ，無法直接用 &lt;code>cat&lt;/code> ，因此我們在 &lt;code>-&lt;/code> (檔名) 前面加上 &lt;code>./&lt;/code> (當前目錄)，再用 &lt;code>cat&lt;/code> 讀取 ，就可以看到密碼了。&lt;/p>
+&lt;p>:::spoiler Flag
+rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level2---level3">Level2 -&amp;gt; Level3
+&lt;/h3>&lt;p>這題要我們處理名稱內有空格的檔案，放 &lt;code>\&lt;/code> 在空格前，就可以用 &lt;code>cat&lt;/code> 讀取。&lt;/p>
+&lt;p>:::spoiler Flag
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level3---level4">Level3 -&amp;gt; Level4
+&lt;/h3>&lt;p>此提要處理被隱藏的檔案，剛開始先 &lt;code>cd&lt;/code> 進 &lt;code>inhere&lt;/code> 資料夾，&lt;code>ls&lt;/code> 時會發現沒有檔案，這時可以在 &lt;code>ls&lt;/code> 後加上參數 &lt;code>-a&lt;/code> 顯示所有檔案(包含隱藏項目)，就看到 &lt;code>.hidden&lt;/code> 的檔，依樣用 &lt;code>cat&lt;/code> 就可以拿到密碼了。&lt;/p>
+&lt;p>:::spoiler Flag
+2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level4---level5">Level4 -&amp;gt; Level5
+&lt;/h3>&lt;p>剛進去時可以看到 &lt;code>inhere&lt;/code> 的資料夾，進入後會發戲有10個檔案，題目要我們找到可閱讀的檔案，用 &lt;a class="link" href="https://man7.org/linux/man-pages/man1/file.1.html" target="_blank" rel="noopener"
+>&lt;code>file ./*&lt;/code>&lt;/a> 查看底下所有的檔案格式，會發現 &lt;code>-file07&lt;/code> 是 &lt;code>ASCII text&lt;/code> 格式，直接&lt;code>cat&lt;/code> 進去就可以看到密碼。&lt;/p>
+&lt;p>:::spoiler Flag
+lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level5---level6">Level5 -&amp;gt; Level6
+&lt;/h3>&lt;p>進入時直接進入 &lt;code>inhere&lt;/code> 資料夾，裡面有很多檔案，題目要我們找到1033 bytes in size 的檔案，用 &lt;a class="link" href="https://man7.org/linux/man-pages/man1/find.1.html" target="_blank" rel="noopener"
+>&lt;code>find -size 1033c&lt;/code>&lt;/a>，顯示說此檔案位於 &lt;code>./maybehere07/.file2&lt;/code>，就可以找到密碼了。&lt;/p>
+&lt;p>:::spoiler Flag
+P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level6---level7">Level6 -&amp;gt; Level7
+&lt;/h3>&lt;p>這題與上一題類似，這次要找的是 &lt;em>owned by bandit7，group bandit6，33 bytes in size&lt;/em>，因此一樣會用到 &lt;a class="link" href="https://man7.org/linux/man-pages/man1/find.1.html" target="_blank" rel="noopener"
+>&lt;code>find&lt;/code>&lt;/a>，輸入 &lt;code>find -user bandit7 -group bandit6 -size 33c&lt;/code> 後，會發現有許多 &lt;code>permission denied&lt;/code> ，在原本指令後加上 &lt;code>2&amp;gt;/dev/null&lt;/code> 將其忽略，就能看到密碼藏在 &lt;code>/var/lib/dpkg/info/bandit7.password&lt;/code> 中。&lt;/p>
+&lt;p>:::spoiler Flag
+z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level7---level8">Level7 -&amp;gt; Level8
+&lt;/h3>&lt;p>此題要我們找到放在 millionth 旁的密碼，用grep即可找到密碼，輸入 &lt;code>grep million data.txt&lt;/code>。&lt;/p>
+&lt;p>:::spoiler Flag
+TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level8---level9">Level8 -&amp;gt; Level9
+&lt;/h3>&lt;p>這題要我們尋找在 &lt;code>data.txt&lt;/code> 裡，只出現一次的密碼，因此我們可以用 &lt;code>uniq -u&lt;/code> 來查找只出現一次的內容，會發現出現非常多的航數。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bandit8@bandit:~$ uniq data.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kjIuqjobFBhKw9Mmfj2wAnWbXB2VxSfv
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">5Y76FifuxKStZi4CVovF2uPhgLrZnLzG
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">AiYd84lOOVTA4gqJPX7f6DH8eG3zwq1W
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">A16BW831T94qcsYcGDSkgzYhxnX2xUdK
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">vlsSKqk3yVx2PZxIkBuZPR3KKIf8hGi1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cEqNrEqHVIIi9fQKdcvAxaip1brmsSxT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">FQIgwPiuPKftkFhIy9Nzm94sWdNGTlHd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">P8jd7Kr8GXVKTLhe1Y7cVYAARwh4lN4A
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Rlaj8VWIHkYsAg42TsFplgAd4ekjgR2X
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>是因為 &lt;code>uniq&lt;/code> 只抓重複的相鄰行，所以我們可以先將檔案先進行排序 &lt;code>sort&lt;/code>，最後輸入&lt;code>sort data.txt | uniq -u&lt;/code> 就能找到此題的 flag。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>|&lt;/code> 為管線命令，連結前一個命令的&lt;strong>輸出&lt;/strong>和下一個命令的&lt;strong>輸入&lt;/strong>。&lt;/p>
+&lt;/blockquote>
+&lt;p>:::spoiler Flag
+EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level9---level10">Level9 -&amp;gt; Level10
+&lt;/h3>&lt;p>此題要獲取 &lt;code>data.txt&lt;/code> 檔案中的 flag 但可以發現到檔案裡是一堆亂碼。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bandit9@bandit:~$ cat data.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">~��Mk���Axڋ��k��;�␦Jb��mi��~�]��]㹩�ux��R~&amp;amp;����4SA&amp;amp;l&amp;#34;����x� ٗ6m�q���bf��s���~n�����n����
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ��~��=�|ڱ|J�&amp;lt;��=��u��ڷV���1�`�;�s��g�M-�2k���h�(��1�o�0;T�}��DE*&amp;#39;3�i,���x�ʤ��iSn3�6E�p:���M���O!�d����tW������]��]4&amp;amp;�7�FR^+�6ư�������#
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> d��w�&amp;#39;q�Ԇ
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ��x�)�,V��*&amp;#34;�3��_�3+2)`��5HF���x[
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">��i�܃�i��}y��M2�3Hu����i�[��U�(�.B�9&amp;#39;�z,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> W9�Z��Pf���7A*���f�l�nD}��M��#�~
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">���=����؇���t6�c���89���⟢V2$�ky�N��� ��ۏ_\��7���q@v���~��%�٣c?G�o��
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>用 &lt;code>strings data.txt&lt;/code> 指令將檔案內容轉為可讀的字串，就能看到此題的 flag 放在 &lt;code>=&lt;/code> 的後面。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bandit9@bandit:~$ strings data.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">========== theG)&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">========== passwordk^
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">========== is
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">========== G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>:::spoiler Flag
+G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+:::&lt;/p>
+&lt;hr>
+&lt;h3 id="level10---level11">Level10 -&amp;gt; Level11
+&lt;/h3>&lt;p>這題要我們用 base64 去解碼 &lt;code>data.txt&lt;/code> ，使用 &lt;code>base64&lt;/code> 指令來加密，加上 &lt;code>-d&lt;/code> 來解碼。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bandit10@bandit:~$ base64 data.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">VkdobElIQmhjM04zYjNKa0lHbHpJRFo2VUdWNmFVeGtVakpTUzA1a1RsbEdUbUkyYmxaRFMzcHdh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">R3hZU0VKTkNnPT0K
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bandit10@bandit:~$ base64 -d data.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The password is 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>:::spoiler Flag
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+:::&lt;/p>
+&lt;h3 id="level11---level12">Level11 -&amp;gt; Level12
+&lt;/h3>&lt;p>連線後，&lt;code>data.txt&lt;/code> 內容為&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bandit11@bandit:~$ cat data.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Gur cnffjbeq vf WIAOOSFzMjXXBC0KoSKBbJ8puQm5lIEi
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>題目要求我們將每個字元 Unicode 編碼差異為 13 解密，可以利用 &lt;code>tr&lt;/code> 指令轉換字符。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bandit11@bandit:~$ cat data.txt |tr &amp;#34;A-Za-z&amp;#34; &amp;#34;N-ZA-Mn-za-m&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>&amp;ldquo;A-Za-z&amp;rdquo; 舊字串的字元 +13 後為 &amp;ldquo;N-ZA-Mn-za-m&amp;rdquo; 的新字串字元。&lt;/p>
+&lt;/blockquote>
+&lt;p>:::spoiler Flag
+JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+:::&lt;/p></description></item><item><title>Data Structure Note</title><link>https://stanley1106.github.io/p/ds-note/</link><pubDate>Thu, 26 Sep 2024 11:43:26 +0800</pubDate><guid>https://stanley1106.github.io/p/ds-note/</guid><description>&lt;h1 id="ds-筆記">DS 筆記
+&lt;/h1>&lt;h2 id="演算法">演算法
+&lt;/h2>&lt;p>&lt;a class="link" href="https://www.cs.usfca.edu/~galles/visualization/BFS.html" target="_blank" rel="noopener"
+>Breadth-First Search(BFS)&lt;/a>
+廣度優先，用queue依序找每個階層，如果此點紀錄為已走過，並回到上一個基準節點去尋找其他與基準節點相鄰的點&lt;/p>
+&lt;p>&lt;a class="link" href="https://www.cs.usfca.edu/~galles/visualization/DFS.html" target="_blank" rel="noopener"
+>Depth-First Search(DFS)&lt;/a>
+深度優先，線性往下找，注意的是走訪過的節點不能再度走訪，所以使用堆疊stack後進先出的特性來記錄還沒有走過的節點&lt;/p>
+&lt;h2 id="heap">Heap
+&lt;/h2>&lt;ol>
+&lt;li>&lt;a class="link" href="https://www.cs.usfca.edu/~galles/visualization/Heap.html" target="_blank" rel="noopener"
+>Min Heap/Max Heap&lt;/a>
+放入時都是放在最後，將小(大)的往上排，大(小)的往下放&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.cs.usfca.edu/~galles/visualization/HeapSort.html" target="_blank" rel="noopener"
+>Heap sort&lt;/a>
+從下面開始比較，下面若比上還大，做交換，最後把最上方提出&lt;/li>
+&lt;/ol>
+&lt;h2 id="tree-特性">Tree 特性
+&lt;/h2>&lt;ul>
+&lt;li>full tree
+一個高度為3的完滿二元樹，會有7個節點&lt;/li>
+&lt;li>complete tree
+一個高度為3的完滿二元樹，會小於7個節點
+由上到下，由左至右，沒有空格&lt;/li>
+&lt;li>balance tree
+平衡二元樹指的是，任意一個節點底下的兩顆子樹，子樹深度差不超過 1(最多能差 1 層的意思)。&lt;/li>
+&lt;/ul>
+&lt;h2 id="graph-圖形">Graph 圖形
+&lt;/h2>&lt;p>(島與島)
+spanning tree
+&lt;img src="https://hackmd.io/_uploads/HJPrgG4va.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;h2 id="hash-雜湊">Hash 雜湊
+&lt;/h2>&lt;p>在用雜湊函數運算出來的雜湊值，根據鍵 (key)來儲存在數據結構中。而存放這些記錄的數組就稱為雜湊表。&lt;/p>
+&lt;h2 id="binary-tree-traversal">Binary Tree Traversal
+&lt;/h2>&lt;p>&lt;img src="https://hackmd.io/_uploads/r1nIefEPa.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;ul>
+&lt;li>前序 (preorder): 中 -&amp;gt; 左 -&amp;gt; 右，4213657&lt;/li>
+&lt;li>中序 (inorder): 左 -&amp;gt; 中 -&amp;gt; 右，1234567。注意：對二元搜尋樹 (binary search tree, BST) 做 inorder traversal 就是由小到大依序遍歷。&lt;/li>
+&lt;li>後序 (postorder): 左 -&amp;gt; 右 -&amp;gt; 中，1325764&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-3-tree">2-3 Tree
+&lt;/h2>&lt;p>&lt;a class="link" href="https://z1nhouse.github.io/post/5lQAWUQWk/" target="_blank" rel="noopener"
+>https://z1nhouse.github.io/post/5lQAWUQWk/&lt;/a>&lt;/p>
+&lt;h2 id="avl-tree">AVL Tree
+&lt;/h2>&lt;p>平衡樹&lt;/p></description></item></channel></rss>

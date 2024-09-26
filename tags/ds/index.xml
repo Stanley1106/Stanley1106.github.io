@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DS on Stanley Pages</title><link>https://stanley1106.github.io/tags/ds/</link><description>Recent content in DS on Stanley Pages</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 26 Sep 2024 11:43:26 +0800</lastBuildDate><atom:link href="https://stanley1106.github.io/tags/ds/index.xml" rel="self" type="application/rss+xml"/><item><title>Data Structure Note</title><link>https://stanley1106.github.io/p/ds-note/</link><pubDate>Thu, 26 Sep 2024 11:43:26 +0800</pubDate><guid>https://stanley1106.github.io/p/ds-note/</guid><description>&lt;h1 id="ds-筆記">DS 筆記
+&lt;/h1>&lt;h2 id="演算法">演算法
+&lt;/h2>&lt;p>&lt;a class="link" href="https://www.cs.usfca.edu/~galles/visualization/BFS.html" target="_blank" rel="noopener"
+>Breadth-First Search(BFS)&lt;/a>
+廣度優先，用queue依序找每個階層，如果此點紀錄為已走過，並回到上一個基準節點去尋找其他與基準節點相鄰的點&lt;/p>
+&lt;p>&lt;a class="link" href="https://www.cs.usfca.edu/~galles/visualization/DFS.html" target="_blank" rel="noopener"
+>Depth-First Search(DFS)&lt;/a>
+深度優先，線性往下找，注意的是走訪過的節點不能再度走訪，所以使用堆疊stack後進先出的特性來記錄還沒有走過的節點&lt;/p>
+&lt;h2 id="heap">Heap
+&lt;/h2>&lt;ol>
+&lt;li>&lt;a class="link" href="https://www.cs.usfca.edu/~galles/visualization/Heap.html" target="_blank" rel="noopener"
+>Min Heap/Max Heap&lt;/a>
+放入時都是放在最後，將小(大)的往上排，大(小)的往下放&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.cs.usfca.edu/~galles/visualization/HeapSort.html" target="_blank" rel="noopener"
+>Heap sort&lt;/a>
+從下面開始比較，下面若比上還大，做交換，最後把最上方提出&lt;/li>
+&lt;/ol>
+&lt;h2 id="tree-特性">Tree 特性
+&lt;/h2>&lt;ul>
+&lt;li>full tree
+一個高度為3的完滿二元樹，會有7個節點&lt;/li>
+&lt;li>complete tree
+一個高度為3的完滿二元樹，會小於7個節點
+由上到下，由左至右，沒有空格&lt;/li>
+&lt;li>balance tree
+平衡二元樹指的是，任意一個節點底下的兩顆子樹，子樹深度差不超過 1(最多能差 1 層的意思)。&lt;/li>
+&lt;/ul>
+&lt;h2 id="graph-圖形">Graph 圖形
+&lt;/h2>&lt;p>(島與島)
+spanning tree
+&lt;img src="https://hackmd.io/_uploads/HJPrgG4va.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;h2 id="hash-雜湊">Hash 雜湊
+&lt;/h2>&lt;p>在用雜湊函數運算出來的雜湊值，根據鍵 (key)來儲存在數據結構中。而存放這些記錄的數組就稱為雜湊表。&lt;/p>
+&lt;h2 id="binary-tree-traversal">Binary Tree Traversal
+&lt;/h2>&lt;p>&lt;img src="https://hackmd.io/_uploads/r1nIefEPa.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;ul>
+&lt;li>前序 (preorder): 中 -&amp;gt; 左 -&amp;gt; 右，4213657&lt;/li>
+&lt;li>中序 (inorder): 左 -&amp;gt; 中 -&amp;gt; 右，1234567。注意：對二元搜尋樹 (binary search tree, BST) 做 inorder traversal 就是由小到大依序遍歷。&lt;/li>
+&lt;li>後序 (postorder): 左 -&amp;gt; 右 -&amp;gt; 中，1325764&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-3-tree">2-3 Tree
+&lt;/h2>&lt;p>&lt;a class="link" href="https://z1nhouse.github.io/post/5lQAWUQWk/" target="_blank" rel="noopener"
+>https://z1nhouse.github.io/post/5lQAWUQWk/&lt;/a>&lt;/p>
+&lt;h2 id="avl-tree">AVL Tree
+&lt;/h2>&lt;p>平衡樹&lt;/p></description></item></channel></rss>

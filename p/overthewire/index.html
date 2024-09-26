@@ -1,0 +1,115 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="手把手解 OverTheWire"><title>OverTheWire 解題紀錄</title>
+<link rel=canonical href=https://stanley1106.github.io/p/overthewire/><link rel=stylesheet href=/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css><meta property='og:title' content="OverTheWire 解題紀錄"><meta property='og:description' content="手把手解 OverTheWire"><meta property='og:url' content='https://stanley1106.github.io/p/overthewire/'><meta property='og:site_name' content='Stanley Pages'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='Hacking'><meta property='article:tag' content='Linux'><meta property='article:tag' content='Note'><meta property='article:published_time' content='2024-09-24T00:00:00+00:00'><meta property='article:modified_time' content='2024-09-24T00:00:00+00:00'><meta property='og:image' content='https://stanley1106.github.io/p/overthewire/over-the-wire.png'><meta name=twitter:title content="OverTheWire 解題紀錄"><meta name=twitter:description content="手把手解 OverTheWire"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://stanley1106.github.io/p/overthewire/over-the-wire.png'><link rel="shortcut icon" href=/favicon.png></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切換選單>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/stanley_hu2459076760101126170.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>👻</span></figure><div class=site-meta><h1 class=site-name><a href=/>Stanley Pages</a></h1><h2 class=site-description>TTU Computer Science Student</h2></div></header><ol class=menu-social><li><a href=https://github.com/Stanley1106 target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://twitter.com target=_blank title=Twitter rel=me><svg class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>夜晚模式</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目錄</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#bandit>Bandit</a></li><li><a href=#網址>網址</a><ol><li><a href=#level0>Level0</a></li><li><a href=#level0---level1>Level0 -> Level1</a></li><li><a href=#level1---level2>Level1 -> Level2</a></li><li><a href=#level2---level3>Level2 -> Level3</a></li><li><a href=#level3---level4>Level3 -> Level4</a></li><li><a href=#level4---level5>Level4 -> Level5</a></li><li><a href=#level5---level6>Level5 -> Level6</a></li><li><a href=#level6---level7>Level6 -> Level7</a></li><li><a href=#level7---level8>Level7 -> Level8</a></li><li><a href=#level8---level9>Level8 -> Level9</a></li><li><a href=#level9---level10>Level9 -> Level10</a></li><li><a href=#level10---level11>Level10 -> Level11</a></li><li><a href=#level11---level12>Level11 -> Level12</a></li></ol></li></ol></nav></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/overthewire/><img src=/p/overthewire/over-the-wire_hu1805805110945088821.png srcset="/p/overthewire/over-the-wire_hu1805805110945088821.png 800w, /p/overthewire/over-the-wire_hu7916238955983225360.png 1600w" width=800 height=159 loading=lazy alt="Featured image of post OverTheWire 解題紀錄"></a></div><div class=article-details><header class=article-category><a href=/categories/hacking/ style=background-color:#2a9d8f;color:#fff>Hacking</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/overthewire/>OverTheWire 解題紀錄</a></h2><h3 class=article-subtitle>手把手解 OverTheWire</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Sep 24, 2024</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>閱讀時間: 3 分鐘</time></div></footer></div></header><section class=article-content><h1 id=overthewire-解題紀錄>OverTheWire 解題紀錄</h1><h2 id=bandit>Bandit</h2><h2 id=網址>網址</h2><p><a class=link href=https://overthewire.org/wargames/bandit/ target=_blank rel=noopener>https://overthewire.org/wargames/bandit/</a></p><h3 id=level0>Level0</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>ssh bandit0@bandit.labs.overthewire.org -p <span class=m>2220</span>
+</span></span></code></pre></td></tr></table></div></div><p>使用此指令連線到此伺服器，輸入密碼 <code>bandit0</code> 即可連線。</p><hr><h3 id=level0---level1>Level0 -> Level1</h3><p>先用 <code>ls</code> 查看底下的檔案，可以看到 readme 檔，用 <code>cat</code> 指令讀取檔案內容。
+看到密碼後，就可以 <code>ctrl + D</code> 退出伺服器。
+:::spoiler Flag
+NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+:::</p><hr><h3 id=level1---level2>Level1 -> Level2</h3><p>這一題要我們處理非字元符號，剛開始先 <code>ls</code> 可以看到檔名為 <code>-</code> ，無法直接用 <code>cat</code> ，因此我們在 <code>-</code> (檔名) 前面加上 <code>./</code> (當前目錄)，再用 <code>cat</code> 讀取 ，就可以看到密碼了。</p><p>:::spoiler Flag
+rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+:::</p><hr><h3 id=level2---level3>Level2 -> Level3</h3><p>這題要我們處理名稱內有空格的檔案，放 <code>\</code> 在空格前，就可以用 <code>cat</code> 讀取。</p><p>:::spoiler Flag
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+:::</p><hr><h3 id=level3---level4>Level3 -> Level4</h3><p>此提要處理被隱藏的檔案，剛開始先 <code>cd</code> 進 <code>inhere</code> 資料夾，<code>ls</code> 時會發現沒有檔案，這時可以在 <code>ls</code> 後加上參數 <code>-a</code> 顯示所有檔案(包含隱藏項目)，就看到 <code>.hidden</code> 的檔，依樣用 <code>cat</code> 就可以拿到密碼了。</p><p>:::spoiler Flag
+2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+:::</p><hr><h3 id=level4---level5>Level4 -> Level5</h3><p>剛進去時可以看到 <code>inhere</code> 的資料夾，進入後會發戲有10個檔案，題目要我們找到可閱讀的檔案，用 <a class=link href=https://man7.org/linux/man-pages/man1/file.1.html target=_blank rel=noopener><code>file ./*</code></a> 查看底下所有的檔案格式，會發現 <code>-file07</code> 是 <code>ASCII text</code> 格式，直接<code>cat</code> 進去就可以看到密碼。</p><p>:::spoiler Flag
+lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+:::</p><hr><h3 id=level5---level6>Level5 -> Level6</h3><p>進入時直接進入 <code>inhere</code> 資料夾，裡面有很多檔案，題目要我們找到1033 bytes in size 的檔案，用 <a class=link href=https://man7.org/linux/man-pages/man1/find.1.html target=_blank rel=noopener><code>find -size 1033c</code></a>，顯示說此檔案位於 <code>./maybehere07/.file2</code>，就可以找到密碼了。</p><p>:::spoiler Flag
+P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+:::</p><hr><h3 id=level6---level7>Level6 -> Level7</h3><p>這題與上一題類似，這次要找的是 <em>owned by bandit7，group bandit6，33 bytes in size</em>，因此一樣會用到 <a class=link href=https://man7.org/linux/man-pages/man1/find.1.html target=_blank rel=noopener><code>find</code></a>，輸入 <code>find -user bandit7 -group bandit6 -size 33c</code> 後，會發現有許多 <code>permission denied</code> ，在原本指令後加上 <code>2>/dev/null</code> 將其忽略，就能看到密碼藏在 <code>/var/lib/dpkg/info/bandit7.password</code> 中。</p><p>:::spoiler Flag
+z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+:::</p><hr><h3 id=level7---level8>Level7 -> Level8</h3><p>此題要我們找到放在 millionth 旁的密碼，用grep即可找到密碼，輸入 <code>grep million data.txt</code>。</p><p>:::spoiler Flag
+TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+:::</p><hr><h3 id=level8---level9>Level8 -> Level9</h3><p>這題要我們尋找在 <code>data.txt</code> 裡，只出現一次的密碼，因此我們可以用 <code>uniq -u</code> 來查找只出現一次的內容，會發現出現非常多的航數。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bandit8@bandit:~$ uniq data.txt
+</span></span><span class=line><span class=cl>kjIuqjobFBhKw9Mmfj2wAnWbXB2VxSfv
+</span></span><span class=line><span class=cl>5Y76FifuxKStZi4CVovF2uPhgLrZnLzG
+</span></span><span class=line><span class=cl>AiYd84lOOVTA4gqJPX7f6DH8eG3zwq1W
+</span></span><span class=line><span class=cl>A16BW831T94qcsYcGDSkgzYhxnX2xUdK
+</span></span><span class=line><span class=cl>vlsSKqk3yVx2PZxIkBuZPR3KKIf8hGi1
+</span></span><span class=line><span class=cl>cEqNrEqHVIIi9fQKdcvAxaip1brmsSxT
+</span></span><span class=line><span class=cl>FQIgwPiuPKftkFhIy9Nzm94sWdNGTlHd
+</span></span><span class=line><span class=cl>P8jd7Kr8GXVKTLhe1Y7cVYAARwh4lN4A
+</span></span><span class=line><span class=cl>Rlaj8VWIHkYsAg42TsFplgAd4ekjgR2X
+</span></span></code></pre></td></tr></table></div></div><p>是因為 <code>uniq</code> 只抓重複的相鄰行，所以我們可以先將檔案先進行排序 <code>sort</code>，最後輸入<code>sort data.txt | uniq -u</code> 就能找到此題的 flag。</p><blockquote><p><code>|</code> 為管線命令，連結前一個命令的<strong>輸出</strong>和下一個命令的<strong>輸入</strong>。</p></blockquote><p>:::spoiler Flag
+EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+:::</p><hr><h3 id=level9---level10>Level9 -> Level10</h3><p>此題要獲取 <code>data.txt</code> 檔案中的 flag 但可以發現到檔案裡是一堆亂碼。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bandit9@bandit:~$ cat data.txt
+</span></span><span class=line><span class=cl>~��Mk���Axڋ��k��;�␦Jb��mi��~�]��]㹩�ux��R~&amp;����4SA&amp;l&#34;����x�     ٗ6m�q���bf��s���~n�����n����
+</span></span><span class=line><span class=cl>                      ��~��=�|ڱ|J�&lt;��=��u��ڷV���1�`�;�s��g�M-�2k���h�(��1�o�0;T�}��DE*&#39;3�i,���x�ʤ��iSn3�6E�p:���M���O!�d����tW������]��]4&amp;�7�FR^+�6ư�������#
+</span></span><span class=line><span class=cl>                d��w�&#39;q�Ԇ
+</span></span><span class=line><span class=cl>                         ��x�)�,V��*&#34;�3��_�3+2)`��5HF���x[
+</span></span><span class=line><span class=cl>��i�܃�i��}y��M2�3Hu����i�[��U�(�.B�9&#39;�z,
+</span></span><span class=line><span class=cl>                                        W9�Z��Pf���7A*���f�l�nD}��M��#�~
+</span></span><span class=line><span class=cl>���=����؇���t6�c���89���⟢V2$�ky�N���    ��ۏ_\��7���q@v���~��%�٣c?G�o��
+</span></span></code></pre></td></tr></table></div></div><p>用 <code>strings data.txt</code> 指令將檔案內容轉為可讀的字串，就能看到此題的 flag 放在 <code>=</code> 的後面。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bandit9@bandit:~$ strings data.txt
+</span></span><span class=line><span class=cl>========== theG)&#34;
+</span></span><span class=line><span class=cl>========== passwordk^
+</span></span><span class=line><span class=cl>========== is
+</span></span><span class=line><span class=cl>========== G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+</span></span></code></pre></td></tr></table></div></div><p>:::spoiler Flag
+G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+:::</p><hr><h3 id=level10---level11>Level10 -> Level11</h3><p>這題要我們用 base64 去解碼 <code>data.txt</code> ，使用 <code>base64</code> 指令來加密，加上 <code>-d</code> 來解碼。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bandit10@bandit:~$ base64 data.txt
+</span></span><span class=line><span class=cl>VkdobElIQmhjM04zYjNKa0lHbHpJRFo2VUdWNmFVeGtVakpTUzA1a1RsbEdUbUkyYmxaRFMzcHdh
+</span></span><span class=line><span class=cl>R3hZU0VKTkNnPT0K
+</span></span><span class=line><span class=cl>bandit10@bandit:~$ base64 -d data.txt
+</span></span><span class=line><span class=cl>The password is 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+</span></span></code></pre></td></tr></table></div></div><p>:::spoiler Flag
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+:::</p><h3 id=level11---level12>Level11 -> Level12</h3><p>連線後，<code>data.txt</code> 內容為</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bandit11@bandit:~$ cat data.txt
+</span></span><span class=line><span class=cl>Gur cnffjbeq vf WIAOOSFzMjXXBC0KoSKBbJ8puQm5lIEi
+</span></span></code></pre></td></tr></table></div></div><p>題目要求我們將每個字元 Unicode 編碼差異為 13 解密，可以利用 <code>tr</code> 指令轉換字符。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bandit11@bandit:~$ cat data.txt |tr &#34;A-Za-z&#34;  &#34;N-ZA-Mn-za-m&#34;
+</span></span><span class=line><span class=cl>The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>&ldquo;A-Za-z&rdquo; 舊字串的字元 +13 後為 &ldquo;N-ZA-Mn-za-m&rdquo; 的新字串字元。</p></blockquote><p>:::spoiler Flag
+JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+:::</p></section><footer class=article-footer><section class=article-tags><a href=/tags/hacking/>Hacking</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/note/>Note</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section><section class=article-lastmod><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<span>最後更新 Sep 24, 2024 00:00 UTC</span></section></footer></article><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2024 Stanley Pages</section><section class=powerby>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 建立<br>主題 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.26.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 設計</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
