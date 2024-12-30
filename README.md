@@ -1,57 +1,64 @@
-<img align="right" width="150" alt="logo" src="https://user-images.githubusercontent.com/5889006/190859553-5b229b4f-c476-4cbd-928f-890f5265ca4c.png">
+# Stanley1106.github.io
 
-# Hugo Theme Stack Starter Template
+這個倉庫存放著我的個人網站的原始碼，網站網址為 [stanley1106.com](https://stanley1106.com)。
 
-This is a quick start template for [Hugo theme Stack](https://github.com/CaiJimmy/hugo-theme-stack). It uses [Hugo modules](https://gohugo.io/hugo-modules/) feature to load the theme.
+## 關於
 
-It comes with a basic theme structure and configuration. GitHub action has been set up to deploy the theme to a public GitHub page automatically. Also, there's a cron job to update the theme automatically everyday.
+這個網站是我的個人作品集和網路空間。我會在這裡展示我的專案、技能和興趣。
 
-## Get started
+## 內容
 
-1. Click *Use this template*, and create your repository on GitHub.
-![Step 1](https://user-images.githubusercontent.com/5889006/156916624-20b2a784-f3a9-4718-aa5f-ce2a436b241f.png)
+這個倉庫包含以下內容：
 
-2. Once the repository is created, create a GitHub codespace associated with it.
-![Create codespace](https://user-images.githubusercontent.com/5889006/156916672-43b7b6e9-4ffb-4704-b4ba-d5ca40ffcae7.png)
+-   **`index.html`**: 網站的主要 HTML 檔案。
+-   **`css/`**: 存放 CSS 樣式表的目錄，用於網站的視覺設計。
+-   **`js/`**: 存放 JavaScript 檔案的目錄，用於任何互動元素。
+-   **`assets/`**: 存放圖片、圖示和其他靜態資源的目錄。
+-   **(其他相關檔案和目錄)**: 請根據你的網站結構加入
 
-3. And voila! You're ready to go. The codespace has been configured with the latest version of Hugo extended, just run `hugo server` in the terminal and see your new site in action.
+## 使用的技術
 
-4. Check `config` folder for the configuration files. You can edit them to suit your needs. Make sure to update the `baseurl` property in `config/_default/config.toml` to your site's URL.
+-   **HTML**: 用於構建網頁內容的結構。
+-   **CSS**: 用於設定網站的樣式。
+-   **JavaScript**: (如果使用) 用於互動元素和動畫。
+-   **(其他你使用的技術)**: 例如：React, Vue, Bootstrap, Sass 等等。
 
-5. Once you're done editing the site, just commit it and push it. GitHub action will deploy the site automatically to GitHub page associated with the repository.
-![GitHub action](https://user-images.githubusercontent.com/5889006/156916881-90b8bb9b-1925-4e60-9d7a-8026cda729bf.png)
+## 功能特色
+
+-   **首頁**: 簡短介紹我是誰以及我在做什麼。
+-   **專案**: 展示我的個人和專業專案。
+-   **技能**: 列出我的技術和其他相關技能。
+-   **(其他你網站的功能)**: 例如：部落格、聯絡表單、履歷下載等等。
+
+## 如何在本機執行
+
+如果你想在本機執行這個網站，你可以按照以下步驟操作：
+
+1.  複製這個倉庫：
+    ```bash
+    git clone https://github.com/Stanley1106/Stanley1106.github.io.git
+    ```
+2.  導覽到複製的目錄：
+    ```bash
+    cd Stanley1106.github.io
+    ```
+3.  在你的網頁瀏覽器中開啟 `index.html` 檔案。
+
+## 參與貢獻
+
+如果你有任何建議或錯誤回報，歡迎開啟 issue 或提交 pull request。
+
+## 授權許可
+
+這個專案是開源的，並以 [MIT 授權條款](LICENSE) 釋出 (你可以根據你實際的授權條款來更改)。
+
+## 聯絡方式
+
+-   **網站**: [stanley1106.com](https://stanley1106.com)
+-   **電子郵件**: (你的電子郵件地址)
+-   **GitHub**: [https://github.com/Stanley1106](https://github.com/Stanley1106)
+-   **(其他聯絡方式)**: 例如：LinkedIn、Twitter 等等
 
 ---
 
-In case you don't want to use GitHub codespace, you can also run this template in your local machine. **You need to install Git, Go and Hugo extended locally.**
-
-## Update theme manually
-
-Run:
-
-```bash
-hugo mod get -u github.com/CaiJimmy/hugo-theme-stack/v3
-hugo mod tidy
-```
-
-> This starter template has been configured with `v3` version of theme. Due to the limitation of Go module, once the `v4` or up version of theme is released, you need to update the theme manually. (Modifying `config/module.toml` file)
-
-## Deploy to another static page hostings
-
-If you want to build this site using another static page hosting, you need to make sure they have Go installed in the machine. 
-
-<details>
-  <summary>Vercel</summary>
-  
-You need to overwrite build command to install manually Go:
-
-```
-amazon-linux-extras install golang1.11 && hugo --gc --minify
-```
-
-![](https://user-images.githubusercontent.com/5889006/156917172-01e4d418-3469-4ffb-97e4-a905d28b8424.png)
-
-Make sure also to specify Hugo version in the environment variable `HUGO_VERSION` (Use the latest version of Hugo extended):
-
-![Environment variable](https://user-images.githubusercontent.com/5889006/156917212-afb7c70d-ab85-480f-8288-b15781a462c0.png)
-</details>
+**最後更新時間**: (最後更新日期)
