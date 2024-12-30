@@ -55,9 +55,8 @@
 ## 聯絡方式
 
 -   **網站**: [stanley1106.com](https://stanley1106.com)
--   **電子郵件**: (你的電子郵件地址)
+-   **電子郵件**: [stanley1106chen@gmail.com](stanley1106chen@gmail.com)
 -   **GitHub**: [https://github.com/Stanley1106](https://github.com/Stanley1106)
--   **(其他聯絡方式)**: 例如：LinkedIn、Twitter 等等
 
 ---
 
